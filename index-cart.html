@@ -71,6 +71,27 @@
             gap: 12px;
         }
         
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            background: var(--background);
+            color: var(--text);
+            border: 2px solid #E8E0D8;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+        
+        .back-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateX(-4px);
+        }
+        
         .header__cart {
             position: relative;
             background: var(--primary);
@@ -80,15 +101,9 @@
             border-radius: var(--radius);
             cursor: pointer;
             font-size: 20px;
-            transition: var(--transition);
             display: flex;
             align-items: center;
             gap: 8px;
-        }
-        
-        .header__cart:hover {
-            background: var(--secondary);
-            transform: translateY(-2px);
         }
         
         .cart__count {
@@ -111,8 +126,6 @@
             padding: 0 24px;
         }
         
-        /* ---------- Breadcrumb ---------- */
-        
         .cart-page__breadcrumb {
             display: flex;
             align-items: center;
@@ -125,14 +138,7 @@
         .cart-page__breadcrumb a {
             color: var(--primary);
             text-decoration: none;
-            transition: var(--transition);
         }
-        
-        .cart-page__breadcrumb a:hover {
-            color: var(--secondary);
-        }
-        
-        /* ---------- Header ---------- */
         
         .cart-page__header {
             display: flex;
@@ -155,8 +161,6 @@
             color: var(--muted);
         }
         
-        /* ---------- Container ---------- */
-        
         .cart-page__container {
             display: grid;
             grid-template-columns: 1fr 380px;
@@ -164,7 +168,7 @@
             align-items: start;
         }
         
-        /* ---------- Items List ---------- */
+        /* ---------- ITEMS ---------- */
         
         .cart-page__items {
             background: var(--white);
@@ -173,8 +177,6 @@
             overflow: hidden;
         }
         
-        /* ---------- Cart Item ---------- */
-        
         .cart-page__item {
             display: grid;
             grid-template-columns: 100px 1fr 100px 130px 100px 40px;
@@ -182,15 +184,10 @@
             align-items: center;
             padding: 20px 24px;
             border-bottom: 1px solid #F8F5F0;
-            transition: var(--transition);
         }
         
         .cart-page__item:last-child {
             border-bottom: none;
-        }
-        
-        .cart-page__item:hover {
-            background: #FFFBF0;
         }
         
         .cart-page__item-image {
@@ -209,10 +206,6 @@
             padding: 8px;
         }
         
-        .cart-page__item-info {
-            min-width: 0;
-        }
-        
         .cart-page__item-category {
             display: block;
             font-size: 12px;
@@ -225,9 +218,6 @@
             font-weight: 600;
             color: var(--text);
             margin: 0 0 8px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
         
         .cart-page__item-rating {
@@ -240,9 +230,7 @@
         }
         
         .cart-page__item-rating .stars {
-            font-size: 12px;
             color: #F59E0B;
-            letter-spacing: 1px;
         }
         
         .cart-page__item-stock {
@@ -277,8 +265,6 @@
             font-size: 18px;
         }
         
-        /* ---------- Quantity ---------- */
-        
         .cart-page__item-quantity {
             display: flex;
             align-items: center;
@@ -303,7 +289,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: var(--transition);
         }
         
         .qty__btn:hover {
@@ -318,8 +303,6 @@
             text-align: center;
         }
         
-        /* ---------- Remove Button ---------- */
-        
         .cart-page__item-remove {
             width: 36px;
             height: 36px;
@@ -329,7 +312,6 @@
             border-radius: 50%;
             cursor: pointer;
             font-size: 16px;
-            transition: var(--transition);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -338,58 +320,9 @@
         .cart-page__item-remove:hover {
             background: #EF4444;
             color: var(--white);
-            transform: rotate(90deg);
         }
         
-        /* ---------- Empty Cart ---------- */
-        
-        .cart-page__empty {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 80px 20px;
-            text-align: center;
-        }
-        
-        .cart-page__empty span {
-            font-size: 80px;
-            margin-bottom: 20px;
-            opacity: 0.3;
-        }
-        
-        .cart-page__empty h2 {
-            font-size: 24px;
-            color: var(--text);
-            margin: 0 0 10px;
-        }
-        
-        .cart-page__empty p {
-            font-size: 16px;
-            color: var(--muted);
-            margin: 0 0 30px;
-        }
-        
-        .cart-page__empty-btn {
-            display: inline-block;
-            padding: 14px 32px;
-            background: var(--primary);
-            color: var(--white);
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-        
-        .cart-page__empty-btn:hover {
-            background: var(--secondary);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(232, 93, 4, 0.25);
-        }
-        
-        /* ============================================
-           ORDER SUMMARY
-        ============================================ */
+        /* ---------- SUMMARY ---------- */
         
         .cart-page__summary {
             background: var(--white);
@@ -429,8 +362,6 @@
             font-weight: 700 !important;
         }
         
-        /* ---------- Coupon ---------- */
-        
         .summary__coupon {
             display: flex;
             gap: 8px;
@@ -444,14 +375,12 @@
             border-radius: 10px;
             font-size: 14px;
             outline: none;
-            transition: var(--transition);
             background: var(--background);
             font-family: inherit;
         }
         
         .summary__coupon input:focus {
             border-color: var(--primary);
-            background: var(--white);
         }
         
         .summary__coupon button {
@@ -463,24 +392,14 @@
             font-weight: 600;
             font-size: 14px;
             cursor: pointer;
-            transition: var(--transition);
             font-family: inherit;
         }
-        
-        .summary__coupon button:hover {
-            background: var(--secondary);
-            transform: translateY(-2px);
-        }
-        
-        /* ---------- Divider ---------- */
         
         .summary__divider {
             height: 1px;
             background: #F3F0EB;
             margin: 20px 0;
         }
-        
-        /* ---------- Total ---------- */
         
         .summary__total {
             display: flex;
@@ -497,8 +416,6 @@
             font-size: 24px;
         }
         
-        /* ---------- Checkout Button ---------- */
-        
         .summary__checkout-btn {
             width: 100%;
             padding: 16px;
@@ -509,18 +426,13 @@
             font-size: 16px;
             font-weight: 700;
             cursor: pointer;
-            transition: var(--transition);
             margin-bottom: 12px;
             font-family: inherit;
         }
         
         .summary__checkout-btn:hover {
             background: var(--secondary);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(232, 93, 4, 0.25);
         }
-        
-        /* ---------- Continue Shopping ---------- */
         
         .summary__continue {
             display: block;
@@ -530,15 +442,7 @@
             font-size: 14px;
             font-weight: 600;
             padding: 10px;
-            transition: var(--transition);
         }
-        
-        .summary__continue:hover {
-            color: var(--secondary);
-            transform: translateX(-4px);
-        }
-        
-        /* ---------- Payments ---------- */
         
         .summary__payments {
             margin-top: 24px;
@@ -556,49 +460,9 @@
         }
         
         /* ============================================
-           FOOTER
-        ============================================ */
-        
-        .footer {
-            background: #1A1A2E;
-            color: rgba(255, 255, 255, 0.8);
-            padding: 20px 0;
-            margin-top: 40px;
-        }
-        
-        .footer__container {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 0 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-        
-        .footer__copyright {
-            font-size: 13px;
-            margin: 0;
-        }
-        
-        .footer__payment {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 13px;
-        }
-        
-        .payment__icons {
-            font-size: 20px;
-            letter-spacing: 4px;
-        }
-        
-        /* ============================================
            RESPONSIVE
         ============================================ */
         
-        /* ---------- تبلت (کمتر از 992px) ---------- */
         @media (max-width: 992px) {
             .cart-page__container {
                 grid-template-columns: 1fr;
@@ -618,18 +482,8 @@
                 width: 80px;
                 height: 80px;
             }
-            
-            .cart-page__item-name {
-                font-size: 14px;
-            }
-            
-            .cart-page__item-price,
-            .cart-page__item-total {
-                font-size: 14px;
-            }
         }
         
-        /* ---------- موبایل (کمتر از 768px) ---------- */
         @media (max-width: 768px) {
             .cart-page {
                 margin: 20px auto 40px;
@@ -694,28 +548,6 @@
                 font-size: 14px;
             }
             
-            .cart-page__item-name {
-                font-size: 13px;
-                margin-bottom: 4px;
-            }
-            
-            .cart-page__item-category {
-                font-size: 10px;
-            }
-            
-            .cart-page__item-rating,
-            .cart-page__item-stock {
-                font-size: 10px;
-            }
-            
-            .cart-page__summary {
-                padding: 20px;
-            }
-            
-            .summary__title {
-                font-size: 18px;
-            }
-            
             .header__top {
                 padding: 10px 16px;
             }
@@ -723,9 +555,13 @@
             .header__logo .logo {
                 width: 90px;
             }
+            
+            .back-btn {
+                padding: 8px 12px;
+                font-size: 13px;
+            }
         }
         
-        /* ---------- موبایل خیلی کوچک (کمتر از 480px) ---------- */
         @media (max-width: 480px) {
             .cart-page {
                 padding: 0 12px;
@@ -746,18 +582,10 @@
                 height: 60px;
             }
             
-            .cart-page__item-name {
-                font-size: 12px;
-            }
-            
             .cart-page__item-remove {
                 width: 26px;
                 height: 26px;
                 font-size: 12px;
-            }
-            
-            .cart-page__item-quantity {
-                transform: scale(0.85);
             }
             
             .summary__total {
@@ -771,11 +599,6 @@
             .summary__checkout-btn {
                 padding: 14px;
                 font-size: 15px;
-            }
-            
-            .footer__container {
-                flex-direction: column;
-                text-align: center;
             }
         }
     </style>
@@ -791,6 +614,9 @@
             <img class="logo" src="https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/logo%20(nian).jpeg" alt="Logo">
         </div>
         <div class="header__actions">
+            <a href="index_commercial.html" class="back-btn">
+                ← Back to Shop
+            </a>
             <button class="header__cart">
                 <span>🛒</span>
                 <span class="cart__count">3</span>
@@ -804,26 +630,21 @@
 ========================= -->
 <main class="cart-page">
     
-    <!-- Breadcrumb -->
     <div class="cart-page__breadcrumb">
         <a href="index_commercial.html">🏠 Home</a>
         <span>›</span>
         <span>Shopping Cart</span>
     </div>
 
-    <!-- Header -->
     <div class="cart-page__header">
         <h1 class="cart-page__title">🛒 Shopping Cart</h1>
         <span class="cart-page__count">(3 items)</span>
     </div>
 
-    <!-- Container -->
     <div class="cart-page__container">
 
-        <!-- Items -->
         <div class="cart-page__items">
 
-            <!-- Product 1 -->
             <div class="cart-page__item">
                 <div class="cart-page__item-image">
                     <img src="https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Apple_iphone13.jpg" alt="iPhone 13">
@@ -850,10 +671,9 @@
                 <button class="cart-page__item-remove">✕</button>
             </div>
 
-            <!-- Product 2 -->
             <div class="cart-page__item">
                 <div class="cart-page__item-image">
-                    <img src="https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Sony%20WH-1000XM5.jpg" alt="Sony WH-1000XM5">
+                    <img src="https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Sony%20WH-1000XM5.jpg" alt="Sony">
                 </div>
                 <div class="cart-page__item-info">
                     <span class="cart-page__item-category">Audio & Video</span>
@@ -877,10 +697,9 @@
                 <button class="cart-page__item-remove">✕</button>
             </div>
 
-            <!-- Product 3 -->
             <div class="cart-page__item">
                 <div class="cart-page__item-image">
-                    <img src="https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Asus%20ROG%20Zephyrus%20G14.jpg" alt="Asus ROG Zephyrus G14">
+                    <img src="https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Asus%20ROG%20Zephyrus%20G14.jpg" alt="Asus">
                 </div>
                 <div class="cart-page__item-info">
                     <span class="cart-page__item-category">Laptops</span>
@@ -904,22 +723,13 @@
                 <button class="cart-page__item-remove">✕</button>
             </div>
 
-            <!-- Empty Cart Message -->
-            <div class="cart-page__empty" style="display: none;">
-                <span>🛒</span>
-                <h2>Your cart is empty</h2>
-                <p>Looks like you haven't added anything to your cart yet.</p>
-                <a href="index_commercial.html" class="cart-page__empty-btn">Start Shopping</a>
-            </div>
-
         </div>
 
-        <!-- Summary -->
         <aside class="cart-page__summary">
             <h2 class="summary__title">Order Summary</h2>
             
             <div class="summary__row">
-                <span>Subtotal (4 items)</span>
+                <span>Subtotal</span>
                 <span>$2,796</span>
             </div>
             
@@ -966,174 +776,69 @@
 </main>
 
 <!-- =========================
-     FOOTER
-========================= -->
-<footer class="footer">
-    <div class="footer__container">
-        <p class="footer__copyright">© 2026 NiaanShop. All Rights Reserved.</p>
-        <div class="footer__payment">
-            <span>Secure Payment</span>
-            <span class="payment__icons">💳 🏦 🔒</span>
-        </div>
-    </div>
-</footer>
-
-<!-- =========================
      JAVASCRIPT
 ========================= -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     
-    // ============================================
-    // ۱. افزایش/کاهش تعداد
-    // ============================================
-    
+    // کنترل تعداد
     document.querySelectorAll('.cart-page__item-quantity').forEach(function(container) {
-        const minusBtn = container.querySelector('.qty__btn--minus');
-        const plusBtn = container.querySelector('.qty__btn--plus');
-        const qtySpan = container.querySelector('.qty__number');
+        const minus = container.querySelector('.qty__btn--minus');
+        const plus = container.querySelector('.qty__btn--plus');
+        const qty = container.querySelector('.qty__number');
         const item = container.closest('.cart-page__item');
-        const priceEl = item.querySelector('.cart-page__item-price');
         const totalEl = item.querySelector('.cart-page__item-total');
-        const price = parseFloat(priceEl.textContent.replace(/[^0-9.]/g, ''));
+        const price = parseFloat(item.querySelector('.cart-page__item-price').textContent.replace(/[^0-9.]/g, ''));
         
-        minusBtn.addEventListener('click', function() {
-            let qty = parseInt(qtySpan.textContent);
-            if (qty > 1) {
-                qty--;
-                qtySpan.textContent = qty;
-                totalEl.textContent = '$' + (price * qty).toLocaleString();
-                updateOrderSummary();
-            }
-        });
+        if (minus) {
+            minus.onclick = function() {
+                let n = parseInt(qty.textContent);
+                if (n > 1) {
+                    n--;
+                    qty.textContent = n;
+                    totalEl.textContent = '$' + (price * n).toLocaleString();
+                }
+            };
+        }
         
-        plusBtn.addEventListener('click', function() {
-            let qty = parseInt(qtySpan.textContent);
-            qty++;
-            qtySpan.textContent = qty;
-            totalEl.textContent = '$' + (price * qty).toLocaleString();
-            updateOrderSummary();
-        });
+        if (plus) {
+            plus.onclick = function() {
+                let n = parseInt(qty.textContent);
+                n++;
+                qty.textContent = n;
+                totalEl.textContent = '$' + (price * n).toLocaleString();
+            };
+        }
     });
     
-    // ============================================
-    // ۲. حذف محصول
-    // ============================================
-    
+    // حذف محصول
     document.querySelectorAll('.cart-page__item-remove').forEach(function(btn) {
-        btn.addEventListener('click', function() {
+        btn.onclick = function() {
             const item = this.closest('.cart-page__item');
-            
-            if (confirm('Remove this item from cart?')) {
-                item.style.transition = 'all 0.3s ease';
-                item.style.transform = 'translateX(100px)';
-                item.style.opacity = '0';
-                
-                setTimeout(function() {
-                    item.remove();
-                    updateOrderSummary();
-                    checkEmptyCart();
-                }, 300);
-            }
-        });
+            item.style.transition = 'all 0.3s';
+            item.style.opacity = '0';
+            setTimeout(function() {
+                item.remove();
+            }, 300);
+        };
     });
     
-    // ============================================
-    // ۳. بروزرسانی خلاصه سفارش
-    // ============================================
-    
-    function updateOrderSummary() {
-        const items = document.querySelectorAll('.cart-page__item');
-        let subtotal = 0;
-        let totalQty = 0;
-        
-        items.forEach(function(item) {
-            const total = parseFloat(item.querySelector('.cart-page__item-total').textContent.replace(/[^0-9.]/g, ''));
-            const qty = parseInt(item.querySelector('.qty__number').textContent);
-            subtotal += total;
-            totalQty += qty;
-        });
-        
-        const tax = subtotal * 0.1;
-        const total = subtotal + tax;
-        
-        document.querySelector('.cart-page__count').textContent = `(${totalQty} items)`;
-        document.querySelector('.summary__row span:last-child').textContent = '$' + subtotal.toLocaleString();
-        
-        const taxRow = document.querySelectorAll('.summary__row')[2];
-        if (taxRow) {
-            taxRow.querySelector('span:last-child').textContent = '$' + tax.toFixed(2);
-        }
-        
-        document.querySelector('.summary__total span:last-child').textContent = '$' + total.toFixed(2);
-        
-        const cartCount = document.querySelector('.cart__count');
-        if (cartCount) cartCount.textContent = totalQty;
-    }
-    
-    // ============================================
-    // ۴. بررسی سبد خالی
-    // ============================================
-    
-    function checkEmptyCart() {
-        const items = document.querySelectorAll('.cart-page__item');
-        const emptyMsg = document.querySelector('.cart-page__empty');
-        const summary = document.querySelector('.cart-page__summary');
-        
-        if (items.length === 0) {
-            if (emptyMsg) emptyMsg.style.display = 'flex';
-            if (summary) summary.style.display = 'none';
-        } else {
-            if (emptyMsg) emptyMsg.style.display = 'none';
-            if (summary) summary.style.display = 'block';
-        }
-    }
-    
-    // ============================================
-    // ۵. کد تخفیف
-    // ============================================
-    
-    const applyCouponBtn = document.getElementById('applyCouponBtn');
-    const couponInput = document.getElementById('couponInput');
-    
-    if (applyCouponBtn) {
-        applyCouponBtn.addEventListener('click', function() {
-            const code = couponInput.value.trim().toUpperCase();
-            
-            if (code === 'SUMMER40') {
+    // کد تخفیف
+    const couponBtn = document.getElementById('applyCouponBtn');
+    if (couponBtn) {
+        couponBtn.onclick = function() {
+            const code = document.getElementById('couponInput').value.toUpperCase();
+            if (code === 'SUMMER40' || code === 'FREESHIP') {
                 this.textContent = '✅ Applied!';
                 this.style.background = '#10B981';
-                alert('🎉 40% discount applied!');
-            } else if (code === 'FREESHIP') {
-                this.textContent = '✅ Applied!';
-                this.style.background = '#10B981';
-                alert('🚚 Free shipping applied!');
-            } else if (code === '') {
-                alert('⚠️ Please enter a coupon code');
+                alert('🎉 Discount applied!');
+            } else if (code) {
+                alert('❌ Invalid code');
             } else {
-                alert('❌ Invalid coupon code');
+                alert('⚠️ Enter a code');
             }
-        });
+        };
     }
-    
-    // ============================================
-    // ۶. دکمه Checkout
-    // ============================================
-    
-    const checkoutBtn = document.querySelector('.summary__checkout-btn');
-    if (checkoutBtn) {
-        checkoutBtn.addEventListener('click', function() {
-            alert('💳 Redirecting to checkout...');
-            // window.location.href = 'checkout.html';
-        });
-    }
-    
-    // ============================================
-    // ۷. بروزرسانی اولیه
-    // ============================================
-    
-    updateOrderSummary();
-    checkEmptyCart();
     
     console.log('✅ Cart page is ready!');
 });
