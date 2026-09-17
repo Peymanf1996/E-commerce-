@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category | NiaanShop</title>
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/logo%20(nian).ico" type="image/x-icon">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #E85D04;
+            --secondary: #F48C06;
+            --accent: #FFBA08;
+            --background: #FFFBF0;
+            --text: #2D1B00;
+            --muted: #8B7355;
+            --white: #FFFFFF;
+            --shadow: rgba(232, 93, 4, 0.15);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        /* HEADER */
+        .header {
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 20px var(--shadow);
+            position: relative;
+            z-index: 100;
+        }
+        
+        .header__top {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .header__logo .logo { width: 120px; height: auto; display: block; }
+        
+        .header__actions { display: flex; align-items: center; gap: 12px; }
+        
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            background: var(--background);
+            color: var(--text);
+            border: 2px solid #E8E0D8;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+        
+        .back-btn:hover { border-color: var(--primary); color: var(--primary); }
+        
+        .header__cart, .header__wishlist {
+            position: relative;
+            border: none;
+            color: var(--white);
+            padding: 10px 18px;
+            border-radius: var(--radius);
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+        
+        .header__cart { background: var(--primary); }
+        .header__wishlist { background: #EF4444; }
+        
+        .cart__count, .wishlist__count {
+            font-size: 13px;
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 2px 10px;
+            border-radius: 20px;
+            min-width: 24px;
+            text-align: center;
+        }
+        
+        /* CATEGORY PAGE */
+        .category-page {
+            max-width: 1300px;
+            margin: 30px auto 60px;
+            padding: 0 24px;
+        }
+        
+        .category-page__breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 24px;
+            font-size: 14px;
+            color: var(--muted);
+        }
+        
+        .category-page__breadcrumb a { color: var(--primary); text-decoration: none; }
+        
+        .category-page__header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 30px;
+            padding-bottom: 24px;
+            border-bottom: 2px solid #F3F0EB;
+        }
+        
+        .category-page__icon {
+            font-size: 48px;
+            background: var(--white);
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #F3F0EB;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .category-page__title-wrapper { flex: 1; }
+        
+        .category-page__title {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text);
+            margin: 0 0 4px;
+        }
+        
+        .category-page__description {
+            font-size: 15px;
+            color: var(--muted);
+            margin: 0;
+        }
+        
+        .category-page__count {
+            font-size: 16px;
+            color: var(--muted);
+            font-weight: 600;
+            background: var(--white);
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid #F3F0EB;
+        }
+        
+        /* TOOLBAR */
+        .category-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding: 16px 20px;
+            background: var(--white);
+            border-radius: 16px;
+            border: 1px solid #F3F0EB;
+            flex-wrap: wrap;
+        }
+        
+        .category-toolbar__results {
+            font-size: 14px;
+            color: var(--muted);
+            font-weight: 600;
+        }
+        
+        .category-toolbar__sort {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+        
+        .category-toolbar__sort label {
+            color: var(--muted);
+            font-weight: 600;
+        }
+        
+        .category-toolbar__sort select {
+            padding: 8px 14px;
+            border: 2px solid #E8E0D8;
+            border-radius: 10px;
+            background: var(--background);
+            font-size: 14px;
+            font-family: inherit;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        .category-toolbar__sort select:focus { border-color: var(--primary); }
+        
+        /* PRODUCTS GRID */
+        .category-products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        .product__card {
+            background: var(--white);
+            border-radius: 16px;
+            border: 1px solid #F3F0EB;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+        }
+        
+        .product__card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary);
+            box-shadow: 0 12px 40px var(--shadow);
+        }
+        
+        .product__image {
+            position: relative;
+            padding-top: 100%;
+            overflow: hidden;
+            background: #F9F6F2;
+        }
+        
+        .product__image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 20px;
+            transition: var(--transition);
+        }
+        
+        .product__card:hover .product__image img { transform: scale(1.05); }
+        
+        .product__quick-actions {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            opacity: 0;
+            transform: translateX(10px);
+            transition: var(--transition);
+        }
+        
+        .product__card:hover .product__quick-actions { opacity: 1; transform: translateX(0); }
+        
+        .quick__btn {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: none;
+            background: var(--white);
+            cursor: pointer;
+            font-size: 14px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .quick__btn:hover { background: var(--primary); color: var(--white); transform: scale(1.1); }
+        
+        .product__badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--white);
+            background: linear-gradient(135deg, #EF4444, #DC2626);
+        }
+        
+        .product__info { padding: 16px 18px 18px; }
+        
+        .product__category {
+            font-size: 12px;
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
+        
+        .product__name {
+            margin: 0 0 8px;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        
+        .product__name a {
+            color: var(--text);
+            text-decoration: none;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .product__name a:hover { color: var(--primary); }
+        
+        .product__rating {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 10px;
+        }
+        
+        .stars { color: #F59E0B; font-size: 14px; letter-spacing: 1px; }
+        
+        .rating__count { font-size: 12px; color: var(--muted); }
+        
+        .product__price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+        
+        .price__current { font-size: 18px; font-weight: 700; color: var(--primary); }
+        
+        .price__old { font-size: 14px; color: #9CA3AF; text-decoration: line-through; }
+        
+        .product__actions { display: flex; gap: 8px; margin-bottom: 12px; }
+        
+        .product__btn {
+            flex: 1;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+        
+        .product__btn--cart { background: var(--primary); color: var(--white); }
+        
+        .product__btn--cart:hover { background: var(--secondary); transform: translateY(-2px); }
+        
+        .product__btn--buy {
+            background: var(--background);
+            color: var(--text);
+            border: 1px solid #E8E0D8;
+        }
+        
+        .product__btn--buy:hover { border-color: var(--primary); color: var(--primary); }
+        
+        .product__stock {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .stock__dot { width: 8px; height: 8px; border-radius: 50%; background: #10B981; }
+        
+        .stock__dot--low { background: #F59E0B; }
+        
+        .stock__text { font-size: 12px; color: var(--muted); }
+        
+        /* LOADING & NOT FOUND */
+        .category-loading, .category-notfound {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        .category-loading span { font-size: 60px; margin-bottom: 20px; animation: spin 2s linear infinite; }
+        
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        
+        .category-notfound span { font-size: 80px; margin-bottom: 20px; opacity: 0.3; }
+        
+        .category-notfound h2 { font-size: 28px; color: var(--text); margin: 0 0 10px; }
+        
+        .category-notfound p { font-size: 16px; color: var(--muted); margin: 0 0 30px; }
+        
+        .category-notfound a {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 1200px) {
+            .category-products { grid-template-columns: repeat(3, 1fr); }
+        }
+        
+        @media (max-width: 992px) {
+            .category-products { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+            .category-page__title { font-size: 26px; }
+        }
+        
+        @media (max-width: 768px) {
+            .category-page { margin: 20px auto 40px; padding: 0 16px; }
+            .category-page__header { flex-direction: column; align-items: flex-start; text-align: center; }
+            .category-page__icon { width: 60px; height: 60px; font-size: 32px; }
+            .category-page__title { font-size: 22px; }
+            .category-products { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .product__info { padding: 12px 14px 14px; }
+            .product__name { font-size: 13px; }
+            .product__price { flex-direction: column; align-items: flex-start; gap: 2px; }
+            .price__current { font-size: 15px; }
+            .product__actions { flex-direction: column; }
+            .header__top { padding: 10px 16px; }
+            .header__logo .logo { width: 90px; }
+        }
+        
+        @media (max-width: 480px) {
+            .category-page { padding: 0 12px; }
+            .category-products { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            .product__image img { padding: 10px; }
+            .product__name { font-size: 12px; }
+            .product__btn { padding: 6px 10px; font-size: 11px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="header__top">
+        <div class="header__logo">
+            <img class="logo" src="https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/logo%20(nian).jpeg" alt="Logo">
+        </div>
+        <div class="header__actions">
+            <a href="index_commercial.html" class="back-btn">← Back to Shop</a>
+            <a href="index-wishlist.html" class="header__wishlist">
+                <span>❤️</span>
+                <span class="wishlist__count">4</span>
+            </a>
+            <a href="index-cart.html" class="header__cart">
+                <span>🛒</span>
+                <span class="cart__count">3</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- CATEGORY PAGE -->
+<main class="category-page">
+
+    <!-- Loading -->
+    <div class="category-loading" id="categoryLoading">
+        <span>⏳</span>
+        <p>Loading category...</p>
+    </div>
+
+    <!-- Not Found -->
+    <div class="category-notfound" id="categoryNotFound" style="display: none;">
+        <span>🔍</span>
+        <h2>Category Not Found</h2>
+        <p>Sorry, we couldn't find the category you're looking for.</p>
+        <a href="index_commercial.html">← Back to Shop</a>
+    </div>
+
+    <!-- Content -->
+    <div id="categoryContent" style="display: none;">
+        
+        <!-- Breadcrumb -->
+        <div class="category-page__breadcrumb">
+            <a href="index_commercial.html">🏠 Home</a>
+            <span>›</span>
+            <span id="breadcrumbCategory">Category</span>
+        </div>
+
+        <!-- Header -->
+        <div class="category-page__header">
+            <div class="category-page__icon" id="categoryIcon">📦</div>
+            <div class="category-page__title-wrapper">
+                <h1 class="category-page__title" id="categoryName">Category</h1>
+                <p class="category-page__description" id="categoryDescription">Description</p>
+            </div>
+            <span class="category-page__count" id="categoryCount">(0 items)</span>
+        </div>
+
+        <!-- Toolbar -->
+        <div class="category-toolbar">
+            <span class="category-toolbar__results" id="resultsCount">Showing 0 products</span>
+            <div class="category-toolbar__sort">
+                <label>Sort by:</label>
+                <select id="sortSelect">
+                    <option value="default">Default</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Rating</option>
+                    <option value="name">Name</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Products -->
+        <div class="category-products" id="categoryProducts"></div>
+
+    </div>
+
+</main>
+
+<!-- JAVASCRIPT -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    
+    const categoryId = new URLSearchParams(window.location.search).get('id');
+    console.log('🔍 Category ID:', categoryId);
+    
+    if (!categoryId) {
+        document.getElementById('categoryLoading').style.display = 'none';
+        document.getElementById('categoryNotFound').style.display = 'flex';
+        return;
+    }
+    
+    // خواندن products.json
+    const jsonUrl = 'https://raw.githubusercontent.com/Peymanf1996/E-commerce-/main/products.json';
+    
+    fetch(jsonUrl)
+        .then(response => response.json())
+        .then(data => {
+            const category = data.categories ? data.categories[categoryId] : null;
+            
+            if (!category) {
+                document.getElementById('categoryLoading').style.display = 'none';
+                document.getElementById('categoryNotFound').style.display = 'flex';
+                return;
+            }
+            
+            // محصولات این دسته
+            const products = category.products.map(id => data[id]).filter(p => p);
+            
+            displayCategory(category, products);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('categoryLoading').style.display = 'none';
+            document.getElementById('categoryNotFound').style.display = 'flex';
+        });
+    
+    function displayCategory(category, products) {
+        document.getElementById('categoryLoading').style.display = 'none';
+        document.getElementById('categoryContent').style.display = 'block';
+        
+        // اطلاعات دسته
+        document.getElementById('categoryIcon').textContent = category.icon;
+        document.getElementById('categoryName').textContent = category.name;
+        document.getElementById('categoryDescription').textContent = category.description;
+        document.getElementById('categoryCount').textContent = `(${products.length} items)`;
+        document.getElementById('breadcrumbCategory').textContent = category.name;
+        document.getElementById('resultsCount').textContent = `Showing ${products.length} products`;
+        
+        document.title = `${category.name} | NiaanShop`;
+        
+        // نمایش محصولات
+        renderProducts(products);
+    }
+    
+    function renderProducts(products) {
+        const container = document.getElementById('categoryProducts');
+        container.innerHTML = '';
+        
+        products.forEach(product => {
+            const card = document.createElement('div');
+            card.className = 'product__card';
+            
+            const currentPrice = parseFloat(product.price.replace(/[^0-9.]/g, ''));
+            const oldPrice = parseFloat(product.oldPrice.replace(/[^0-9.]/g, ''));
+            const discount = Math.round((1 - currentPrice / oldPrice) * 100);
+            
+            card.innerHTML = `
+                <div class="product__image">
+                    <img src="${product.image}" alt="${product.name}">
+                    ${discount > 0 ? `<span class="product__badge">${discount}% OFF</span>` : ''}
+                    <div class="product__quick-actions">
+                        <button class="quick__btn quick__btn--wishlist">❤️</button>
+                        <button class="quick__btn quick__btn--view">👁️</button>
+                    </div>
+                </div>
+                <div class="product__info">
+                    <div class="product__category">${product.category}</div>
+                    <h3 class="product__name">
+                        <a href="index-product.html?id=${getProductId(product.name)}">${product.name}</a>
+                    </h3>
+                    <div class="product__rating">
+                        <span class="stars">${'★'.repeat(product.rating)}${'☆'.repeat(5 - product.rating)}</span>
+                        <span class="rating__count">(${product.reviews})</span>
+                    </div>
+                    <div class="product__price">
+                        <span class="price__current">${product.price}</span>
+                        <span class="price__old">${product.oldPrice}</span>
+                    </div>
+                    <div class="product__actions">
+                        <button class="product__btn product__btn--cart">🛒 Add to Cart</button>
+                        <button class="product__btn product__btn--buy">Buy Now</button>
+                    </div>
+                    <div class="product__stock">
+                        <span class="stock__dot ${product.stock === 'Limited Stock' ? 'stock__dot--low' : ''}"></span>
+                        <span class="stock__text">${product.stock}</span>
+                    </div>
+                </div>
+            `;
+            
+            container.appendChild(card);
+        });
+    }
+    
+    // پیدا کردن ID محصول از اسم
+    function getProductId(name) {
+        const ids = {
+            'iPhone 13 128GB': 'iphone13',
+            'Sony WH-1000XM5': 'sony-wh1000xm5',
+            'Asus ROG Zephyrus G14': 'asus-rog-g14',
+            'Apple Watch Series 8': 'apple-watch-8',
+            'Canon EOS R5': 'canon-eos-r5',
+            'Samsung Galaxy Tab S8': 'samsung-tab-s8',
+            'Apple AirPods Pro 2': 'airpods-pro-2',
+            'Samsung 32" 4K Monitor': 'samsung-monitor-4k',
+            'Razer BlackWidow V3': 'razer-blackwidow-v3',
+            'GoPro Hero 12': 'gopro-hero-12',
+            'Xiaomi 20000mAh Power Bank': 'xiaomi-power-bank'
+        };
+        return ids[name] || '';
+    }
+    
+    // Sort
+    document.getElementById('sortSelect').onchange = function() {
+        // کد sort
+    };
+    
+    console.log('✅ Category page is ready!');
+});
+</script>
+
+</body>
+</html>
