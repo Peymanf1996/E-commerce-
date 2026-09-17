@@ -196,5 +196,145 @@
     },
     "stock": "In Stock",
     "colors": ["Graphite", "Silver", "Pink Gold"]
+  },
+  "airpods-pro-2": {
+    "name": "Apple AirPods Pro 2",
+    "category": "Audio & Video",
+    "price": "$199",
+    "oldPrice": "$249",
+    "image": "https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Apple%20AirPods%20Pro%202.jpg",
+    "gallery": [
+      "https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Apple%20AirPods%20Pro%202.jpg"
+    ],
+    "rating": 5,
+    "reviews": 89,
+    "description": "Apple AirPods Pro 2 with active noise cancellation, adaptive transparency, and personalized spatial audio.",
+    "features": [
+      "Active Noise Cancellation",
+      "Adaptive Transparency",
+      "Personalized Spatial Audio",
+      "Up to 6 hours listening time",
+      "MagSafe Charging Case"
+    ],
+    "specs": {
+      "Brand": "Apple",
+      "Model": "AirPods Pro 2",
+      "Battery": "6 hours",
+      "Charging": "MagSafe"
+    },
+    "stock": "In Stock",
+    "colors": ["White"]
+  },
+  "samsung-monitor-4k": {
+    "name": "Samsung 32\" 4K Monitor",
+    "category": "Monitors",
+    "price": "$549",
+    "oldPrice": "$649",
+    "image": "https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Samsung%204K%20Monitor.jpg",
+    "gallery": [
+      "https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Samsung%204K%20Monitor.jpg"
+    ],
+    "rating": 4,
+    "reviews": 23,
+    "description": "Samsung 32-inch 4K UHD Monitor with stunning color accuracy and slim bezels.",
+    "features": [
+      "32-inch 4K UHD",
+      "HDR10 support",
+      "Slim bezels",
+      "HDMI & DisplayPort",
+      "Eye Saver Mode"
+    ],
+    "specs": {
+      "Brand": "Samsung",
+      "Model": "32\" 4K",
+      "Resolution": "3840 x 2160",
+      "Panel": "IPS"
+    },
+    "stock": "In Stock",
+    "colors": ["Black"]
+  },
+  "razer-blackwidow-v3": {
+    "name": "Razer BlackWidow V3",
+    "category": "Gaming",
+    "price": "$139",
+    "oldPrice": "$179",
+    "image": "https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Razer%20BlackWidow%20V3.jpg",
+    "gallery": [
+      "https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Razer%20BlackWidow%20V3.jpg"
+    ],
+    "rating": 4,
+    "reviews": 34,
+    "description": "Razer BlackWidow V3 mechanical gaming keyboard with Razer Green switches and RGB lighting.",
+    "features": [
+      "Razer Green Mechanical Switches",
+      "Razer Chroma RGB",
+      "Aluminum construction",
+      "Doubleshot ABS keycaps",
+      "Cable routing options"
+    ],
+    "specs": {
+      "Brand": "Razer",
+      "Model": "BlackWidow V3",
+      "Type": "Mechanical",
+      "Lighting": "RGB Chroma"
+    },
+    "stock": "In Stock",
+    "colors": ["Black"]
+  },
+  "gopro-hero-12": {
+    "name": "GoPro Hero 12",
+    "category": "Cameras",
+    "price": "$399",
+    "oldPrice": "$449",
+    "image": "https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/GoPro%20Hero%2012.jpg",
+    "gallery": [
+      "https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/GoPro%20Hero%2012.jpg"
+    ],
+    "rating": 5,
+    "reviews": 56,
+    "description": "GoPro Hero 12 Black action camera with 5.3K video, HyperSmooth 6.0 stabilization, and waterproof design.",
+    "features": [
+      "5.3K60 video",
+      "HyperSmooth 6.0",
+      "Waterproof to 33ft",
+      "Longer battery life",
+      "HDR photos"
+    ],
+    "specs": {
+      "Brand": "GoPro",
+      "Model": "Hero 12",
+      "Video": "5.3K60",
+      "Waterproof": "33ft"
+    },
+    "stock": "In Stock",
+    "colors": ["Black"]
+  },
+  "xiaomi-power-bank": {
+    "name": "Xiaomi 20000mAh Power Bank",
+    "category": "Accessories",
+    "price": "$39",
+    "oldPrice": "$49",
+    "image": "https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Xiaomi%20Power%20Bank.jpg",
+    "gallery": [
+      "https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Xiaomi%20Power%20Bank.jpg"
+    ],
+    "rating": 4,
+    "reviews": 67,
+    "description": "Xiaomi 20000mAh Power Bank with 50W fast charging and dual USB output.",
+    "features": [
+      "20000mAh capacity",
+      "50W fast charging",
+      "Dual USB output",
+      "USB-C input/output",
+      "LED indicators"
+    ],
+    "specs": {
+      "Brand": "Xiaomi",
+      "Model": "20000mAh",
+      "Capacity": "20000mAh",
+      "Output": "50W"
+    },
+    "stock": "In Stock",
+    "colors": ["Black", "White"]
   }
 }
