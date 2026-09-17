@@ -1,1 +1,200 @@
-
+{
+  "iphone13": {
+    "name": "iPhone 13 128GB",
+    "category": "Smartphones",
+    "price": "$799",
+    "oldPrice": "$899",
+    "image": "https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Apple_iphone13.jpg",
+    "gallery": [
+      "https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Apple_iphone13.jpg",
+      "https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Apple%20AirPods%20Pro%202.jpg",
+      "https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Apple%20Watch%20Series%208.jpg"
+    ],
+    "rating": 5,
+    "reviews": 124,
+    "description": "The iPhone 13 features a stunning 6.1-inch Super Retina XDR display, A15 Bionic chip, and advanced dual-camera system. With 5G connectivity and all-day battery life, it's the perfect smartphone for work and play.",
+    "features": [
+      "A15 Bionic chip with 6-core CPU",
+      "6.1-inch Super Retina XDR display",
+      "Dual 12MP camera system",
+      "5G connectivity",
+      "Face ID",
+      "Up to 19 hours video playback",
+      "IP68 water resistance"
+    ],
+    "specs": {
+      "Brand": "Apple",
+      "Model": "iPhone 13",
+      "Storage": "128GB",
+      "Color": "Midnight",
+      "Display": "6.1 inch",
+      "Battery": "3240 mAh"
+    },
+    "stock": "In Stock",
+    "colors": ["Midnight", "Starlight", "Blue", "Pink", "Red"]
+  },
+  "sony-wh1000xm5": {
+    "name": "Sony WH-1000XM5",
+    "category": "Audio & Video",
+    "price": "$349",
+    "oldPrice": "$399",
+    "image": "https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Sony%20WH-1000XM5.jpg",
+    "gallery": [
+      "https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Sony%20WH-1000XM5.jpg",
+      "https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Sony%20Headphones.jpg"
+    ],
+    "rating": 5,
+    "reviews": 89,
+    "description": "Industry-leading noise cancellation with two processors and eight microphones. Enjoy premium sound quality, 30-hour battery life, and crystal-clear calls with the WH-1000XM5.",
+    "features": [
+      "Industry-leading noise cancellation",
+      "30-hour battery life",
+      "Quick charge (3 min = 3 hours)",
+      "Multipoint connection",
+      "Speak-to-Chat technology",
+      "Precise Voice Pickup",
+      "Foldable design"
+    ],
+    "specs": {
+      "Brand": "Sony",
+      "Model": "WH-1000XM5",
+      "Type": "Wireless Headphones",
+      "Battery": "30 hours",
+      "Weight": "250g",
+      "Connectivity": "Bluetooth 5.2"
+    },
+    "stock": "In Stock",
+    "colors": ["Black", "Silver", "Midnight Blue"]
+  },
+  "asus-rog-g14": {
+    "name": "Asus ROG Zephyrus G14",
+    "category": "Laptops",
+    "price": "$1,299",
+    "oldPrice": "$1,599",
+    "image": "https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Asus%20ROG%20Zephyrus%20G14.jpg",
+    "gallery": [
+      "https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Asus%20ROG%20Zephyrus%20G14.jpg",
+      "https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Asus%20Laptop.jpg"
+    ],
+    "rating": 4,
+    "reviews": 67,
+    "description": "The ROG Zephyrus G14 is a powerful gaming laptop with AMD Ryzen 9 processor, NVIDIA GeForce RTX graphics, and a stunning 14-inch display. Perfect for gaming and creative work.",
+    "features": [
+      "AMD Ryzen 9 7940HS",
+      "NVIDIA GeForce RTX 4060",
+      "14-inch QHD+ 165Hz display",
+      "16GB DDR5 RAM",
+      "1TB NVMe SSD",
+      "Windows 11 Home",
+      "AniMe Matrix display"
+    ],
+    "specs": {
+      "Brand": "Asus",
+      "Model": "ROG Zephyrus G14",
+      "Processor": "AMD Ryzen 9",
+      "RAM": "16GB DDR5",
+      "Storage": "1TB SSD",
+      "Display": "14 inch QHD+",
+      "Graphics": "RTX 4060"
+    },
+    "stock": "Limited Stock",
+    "colors": ["Eclipse Gray", "Platinum White"]
+  },
+  "apple-watch-8": {
+    "name": "Apple Watch Series 8",
+    "category": "Smartwatches",
+    "price": "$399",
+    "oldPrice": "$499",
+    "image": "https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Apple%20Watch%20Series%208.jpg",
+    "gallery": [
+      "https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Apple%20Watch%20Series%208.jpg"
+    ],
+    "rating": 5,
+    "reviews": 102,
+    "description": "Apple Watch Series 8 features advanced health sensors, crash detection, and a always-on Retina display. Stay connected and monitor your health with style.",
+    "features": [
+      "Always-On Retina display",
+      "Blood Oxygen app",
+      "ECG app",
+      "Crash Detection",
+      "Temperature sensing",
+      "Water resistant 50m",
+      "18-hour battery life"
+    ],
+    "specs": {
+      "Brand": "Apple",
+      "Model": "Watch Series 8",
+      "Size": "45mm",
+      "Display": "Always-On Retina",
+      "Battery": "18 hours",
+      "Water Resistance": "50m"
+    },
+    "stock": "In Stock",
+    "colors": ["Midnight", "Starlight", "Silver", "Red"]
+  },
+  "canon-eos-r5": {
+    "name": "Canon EOS R5",
+    "category": "Cameras",
+    "price": "$3,899",
+    "oldPrice": "$4,299",
+    "image": "https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Canon%20EOS%20R5.jpg",
+    "gallery": [
+      "https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Canon%20EOS%20R5.jpg"
+    ],
+    "rating": 5,
+    "reviews": 45,
+    "description": "The Canon EOS R5 is a professional mirrorless camera with 45MP full-frame sensor, 8K video recording, and advanced autofocus. Perfect for professional photographers and videographers.",
+    "features": [
+      "45MP Full-Frame CMOS sensor",
+      "8K RAW video recording",
+      "Dual Pixel CMOS AF II",
+      "IBIS up to 8 stops",
+      "20 fps continuous shooting",
+      "Dual card slots",
+      "Weather-sealed body"
+    ],
+    "specs": {
+      "Brand": "Canon",
+      "Model": "EOS R5",
+      "Sensor": "45MP Full-Frame",
+      "Video": "8K RAW",
+      "ISO": "100-51200",
+      "Mount": "RF Mount"
+    },
+    "stock": "Limited Stock",
+    "colors": ["Black"]
+  },
+  "samsung-tab-s8": {
+    "name": "Samsung Galaxy Tab S8",
+    "category": "Tablets",
+    "price": "$699",
+    "oldPrice": "$799",
+    "image": "https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Samsung%20Galaxy%20Tab%20S8.webp",
+    "gallery": [
+      "https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Samsung%20Galaxy%20Tab%20S8.webp",
+      "https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/Samsung%20Galaxy%20Tab%20S8%20ultra.jpg"
+    ],
+    "rating": 4,
+    "reviews": 56,
+    "description": "Samsung Galaxy Tab S8 features an 11-inch LCD display, Snapdragon 8 Gen 1 processor, and S Pen included. Perfect for productivity and entertainment.",
+    "features": [
+      "11-inch LCD 120Hz display",
+      "Snapdragon 8 Gen 1",
+      "8GB RAM",
+      "128GB storage",
+      "S Pen included",
+      "8000mAh battery",
+      "Android 12"
+    ],
+    "specs": {
+      "Brand": "Samsung",
+      "Model": "Galaxy Tab S8",
+      "Display": "11 inch LCD",
+      "RAM": "8GB",
+      "Storage": "128GB",
+      "Battery": "8000mAh"
+    },
+    "stock": "In Stock",
+    "colors": ["Graphite", "Silver", "Pink Gold"]
+  }
+}
