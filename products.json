@@ -336,5 +336,61 @@
     },
     "stock": "In Stock",
     "colors": ["Black", "White"]
+  },
+  "categories": {
+    "smartphones": {
+      "name": "Smartphones",
+      "icon": "📱",
+      "description": "Latest smartphones from top brands",
+      "products": ["iphone13", "airpods-pro-2"]
+    },
+    "laptops": {
+      "name": "Laptops",
+      "icon": "💻",
+      "description": "Powerful laptops for work and gaming",
+      "products": ["asus-rog-g14"]
+    },
+    "audio": {
+      "name": "Audio & Video",
+      "icon": "🎧",
+      "description": "Premium headphones and audio gear",
+      "products": ["sony-wh1000xm5", "airpods-pro-2"]
+    },
+    "smartwatches": {
+      "name": "Smartwatches",
+      "icon": "⌚",
+      "description": "Smartwatches for health and fitness",
+      "products": ["apple-watch-8"]
+    },
+    "cameras": {
+      "name": "Cameras",
+      "icon": "📷",
+      "description": "Professional cameras and gear",
+      "products": ["canon-eos-r5", "gopro-hero-12"]
+    },
+    "gaming": {
+      "name": "Gaming",
+      "icon": "🎮",
+      "description": "Gaming accessories and equipment",
+      "products": ["razer-blackwidow-v3", "asus-rog-g14"]
+    },
+    "accessories": {
+      "name": "Accessories",
+      "icon": "🔌",
+      "description": "Cables, chargers, and more",
+      "products": ["xiaomi-power-bank"]
+    },
+    "monitors": {
+      "name": "Monitors",
+      "icon": "🖥️",
+      "description": "High-quality displays",
+      "products": ["samsung-monitor-4k"]
+    },
+    "tablets": {
+      "name": "Tablets",
+      "icon": "📱",
+      "description": "Tablets for work and play",
+      "products": ["samsung-tab-s8"]
+    }
   }
 }
