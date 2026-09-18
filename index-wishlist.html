@@ -558,7 +558,7 @@
             <img class="logo" src="https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/logo%20(nian).jpeg" alt="Logo">
         </div>
         <div class="header__actions">
-            <a href="index_commercial.html" class="back-btn">
+            <a href="index.html" class="back-btn">
                 ← Back to Shop
             </a>
             <button class="header__wishlist">
@@ -575,7 +575,7 @@
 <main class="wishlist-page">
     
     <div class="wishlist-page__breadcrumb">
-        <a href="index_commercial.html">🏠 Home</a>
+        <a href="index.html">🏠 Home</a>
         <span>›</span>
         <span>My Wishlist</span>
     </div>
@@ -596,7 +596,7 @@
             <div class="wishlist__card-info">
                 <div class="wishlist__card-category">Smartphones</div>
                 <h3 class="wishlist__card-name">
-                    <a href="#">iPhone 13 128GB</a>
+                    <a href="index-product.html?id=iphone13">iPhone 13 128GB</a>
                 </h3>
                 <div class="wishlist__card-rating">
                     <span class="stars">★★★★★</span>
@@ -626,7 +626,7 @@
             <div class="wishlist__card-info">
                 <div class="wishlist__card-category">Audio & Video</div>
                 <h3 class="wishlist__card-name">
-                    <a href="#">Sony WH-1000XM5</a>
+                    <a href="index-product.html?id=sony-wh1000xm5">Sony WH-1000XM5</a>
                 </h3>
                 <div class="wishlist__card-rating">
                     <span class="stars">★★★★★</span>
@@ -656,7 +656,7 @@
             <div class="wishlist__card-info">
                 <div class="wishlist__card-category">Laptops</div>
                 <h3 class="wishlist__card-name">
-                    <a href="#">Asus ROG Zephyrus G14</a>
+                    <a href="index-product.html?id=asus-rog-g14">Asus ROG Zephyrus G14</a>
                 </h3>
                 <div class="wishlist__card-rating">
                     <span class="stars">★★★★☆</span>
@@ -686,7 +686,7 @@
             <div class="wishlist__card-info">
                 <div class="wishlist__card-category">Smartwatches</div>
                 <h3 class="wishlist__card-name">
-                    <a href="#">Apple Watch Series 8</a>
+                    <a href="index-product.html?id=apple-watch-8">Apple Watch Series 8</a>
                 </h3>
                 <div class="wishlist__card-rating">
                     <span class="stars">★★★★★</span>
@@ -714,7 +714,7 @@
         <span>💔</span>
         <h2>Your wishlist is empty</h2>
         <p>Looks like you haven't added anything to your wishlist yet.</p>
-        <a href="index_commercial.html" class="wishlist-page__empty-btn">Start Shopping</a>
+        <a href="index.html" class="wishlist-page__empty-btn">Start Shopping</a>
     </div>
 
 </main>
@@ -761,8 +761,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // View Product
     document.querySelectorAll('.wishlist__card-btn--view').forEach(function(btn) {
         btn.onclick = function() {
-            const name = this.closest('.wishlist__card').querySelector('.wishlist__card-name a').textContent;
-            console.log('👁️ Viewing:', name);
+            const card = this.closest('.wishlist__card');
+            const link = card.querySelector('.wishlist__card-name a');
+            if (link && link.href) {
+                window.location.href = link.href;
+            }
         };
     });
     
