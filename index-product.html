@@ -746,7 +746,7 @@
             <img class="logo" src="https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/logo%20(nian).jpeg" alt="Logo">
         </div>
         <div class="header__actions">
-            <a href="index_commercial.html" class="back-btn">
+            <a href="index.html" class="back-btn">
                 ← Back to Shop
             </a>
             <a href="index-wishlist.html" class="header__wishlist">
@@ -777,7 +777,7 @@
         <span>🔍</span>
         <h2>Product Not Found</h2>
         <p>Sorry, we couldn't find the product you're looking for.</p>
-        <a href="index_commercial.html">← Back to Shop</a>
+        <a href="index.html">← Back to Shop</a>
     </div>
 
     <!-- Product Content -->
@@ -785,9 +785,9 @@
         
         <!-- Breadcrumb -->
         <div class="product-page__breadcrumb">
-            <a href="index_commercial.html">🏠 Home</a>
+            <a href="index.html">🏠 Home</a>
             <span>›</span>
-            <a href="index_commercial.html" id="breadcrumbCategory">Shop</a>
+            <a href="index.html" id="breadcrumbCategory">Shop</a>
             <span>›</span>
             <span id="breadcrumbProduct">Product</span>
         </div>
@@ -898,10 +898,7 @@ document.addEventListener('DOMContentLoaded', function() {
     //   ۲. خواندن اطلاعات از products.json
     // ============================================
     
-    // مسیر فایل JSON - اگر روی گیت‌هاب هست، از CDN استفاده کن
     const jsonUrl = 'https://raw.githubusercontent.com/Peymanf1996/E-commerce-/main/products.json';
-    // اگر روی گیت‌هاب هستی، از این استفاده کن:
-    // const jsonUrl = 'https://cdn.jsdelivr.net/gh/Peymanf1996/E-commerce-@main/products.json';
     
     fetch(jsonUrl)
         .then(response => {
@@ -933,11 +930,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function displayProduct(product) {
         
-        // مخفی کردن Loading
         document.getElementById('productLoading').style.display = 'none';
         document.getElementById('productContent').style.display = 'block';
         
-        // اطلاعات اصلی
         document.getElementById('productName').textContent = product.name;
         document.getElementById('productCategory').textContent = product.category;
         document.getElementById('productPrice').textContent = product.price;
@@ -946,27 +941,21 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('productReviews').textContent = `(${product.reviews} Reviews)`;
         document.getElementById('productStock').textContent = product.stock;
         
-        // Breadcrumb
         document.getElementById('breadcrumbCategory').textContent = product.category;
         document.getElementById('breadcrumbProduct').textContent = product.name;
         
-        // عنوان صفحه
         document.title = `${product.name} | NiaanShop`;
         
-        // ستاره‌ها
         const stars = '★'.repeat(product.rating) + '☆'.repeat(5 - product.rating);
         document.getElementById('productStars').textContent = stars;
         
-        // تخفیف
         const currentPrice = parseFloat(product.price.replace(/[^0-9.]/g, ''));
         const oldPrice = parseFloat(product.oldPrice.replace(/[^0-9.]/g, ''));
         const discount = Math.round((1 - currentPrice / oldPrice) * 100);
         document.getElementById('productDiscount').textContent = `${discount}% OFF`;
         
-        // تصویر اصلی
         document.getElementById('mainImage').src = product.image;
         
-        // گالری
         const thumbsContainer = document.getElementById('thumbnails');
         thumbsContainer.innerHTML = '';
         
@@ -984,7 +973,6 @@ document.addEventListener('DOMContentLoaded', function() {
             thumbsContainer.appendChild(thumb);
         });
         
-        // رنگ‌ها
         if (product.colors && product.colors.length > 0) {
             const colorsList = document.getElementById('colorsList');
             colorsList.innerHTML = '';
@@ -1005,7 +993,6 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('colorsSection').style.display = 'none';
         }
         
-        // ویژگی‌ها
         const featuresList = document.getElementById('featuresList');
         featuresList.innerHTML = '';
         
@@ -1015,7 +1002,6 @@ document.addEventListener('DOMContentLoaded', function() {
             featuresList.appendChild(li);
         });
         
-        // مشخصات
         const specsTable = document.getElementById('specsTable');
         specsTable.innerHTML = '';
         
